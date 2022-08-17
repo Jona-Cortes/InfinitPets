@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">    
+    <link rel="icon" href="./img/Logo.png">
+    <script src="https://kit.fontawesome.com/a0994db117.js" crossorigin="anonymous"></script> 
+    <title>Infinit Pets</title>
+</head>
+<body>
+    <div class="menu">
+        <div class="c1">
+            <img src="./img/Logo.jpg">
+        </div>
+        <div class="c2">
+            <button onclick="location.href='#inicio'">INICIO</button>
+            <button onclick="location.href='#productos'">PRODUCTOS</button>
+            <button onclick="location.href='#contacto'">CONTACTO</button>
+        </div>
+    </div>
+    <div class="banner">
+        <h1>EL MEJOR SITIO</h1>
+        <p>¡Para tus mascotas!</p>
+    </div>
+    <div class="text-inicio" id="inicio">
+        <p>
+            Bienvenido a la mejor veterinaria de <b>León Guanajuato</b>, un lugar en el<br>cual tus mascotas
+            se sentirán los <b>reyes y reinas del hogar</b>, desliza más para abajo para conocer
+            un <br>poco más de nuestra labor.
+        </p>
+    </div>
+    <div class="tarjetas" id="mascotas">
+        <div class="card">
+            <div class="fila1">
+                <img src="./img/bulldog.png">
+            </div>   
+            <div class="fila2">
+                <h2>SERVICIOS</h2>
+                <p>
+                    Que bonito es saber que cuentas con un lugar para cuidar a tu mascota, por ello 
+                    nosotros te ayudamos. Tenemos los servicios que tu mascota necesita ya sea desde su 
+                    primera vacuna contra el parvovirus y moquillo que se aplica a las primeras 6 semanas 
+                    de vida. También contamos con Rayos x para detectar fracturas de huesos, ciertos tumores
+                    y otras masas anormales. También contamos con paquetes funerarios para esa perdida de tu mejor amigo.
+                </p>
+            </div>
+        </div>
+        <div class="card" id="productos">
+            <div class="fila1">
+                <img src="./img/comida.png">
+            </div>   
+            <div class="fila2">
+                <h2>PRODUCTOS</h2>
+                <p>
+                    En cuanto a productos manejamos juguetes, accesorios, alimento y ropa para tu mascota de la mejor calidad
+                    que le ayudara a crecer sano y feliz.
+                </p>
+            </div>
+        </div>    
+        <div class="card">
+            <div class="fila1">
+                <img src="./img/cama.png">
+            </div>   
+            <div class="fila2">
+                <h2>ACCESORIOS</h2>
+                <p>
+                    Sabemos lo importante que son los juguetes y elementos de cuidado de tu mascota,
+                    te ofrecemos los mejores productos, material de buena calidad, gran variedad de
+                    accesorios a tu disposición y la de tu mascota. Contamos con correas reflejantes, 
+                    collar de piel y camas para perro.
+                </p>
+            </div>
+        </div>               
+    </div>
+    <div class="formulario">
+        <form id="form">        
+            <h2>Contáctanos</h2>
+            <input type="text" placeholder="Nombre" name="name" id="nombre">
+            <input type="email" placeholder="Correo electronico" name="email" id="correo">
+            <textarea name="textarea" id="información" rows="3" cols="50" placeholder="Escríbenos"></textarea>
+            <button type="submit">ENVIÁR</button>
+        </form>
+    </div>
+    <script>
+        let contador=0;
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("form").addEventListener('submit', validarFormulario); 
+        });
+        function validarFormulario(evento) {
+        evento.preventDefault();
+            let nombre = document.getElementById('nombre').value;
+            let correo = document.getElementById('correo').value;
+            let pedido = document.getElementById('información').value;
+            if(nombre.length == 0) {
+                contador++;
+            }
+            if(correo.length == 0) {
+                contador++;
+            }
+            if(pedido.length == 0) {
+                contador++;
+            }            
+            switch(contador){
+                case 0:
+                    alert("Gracias por llenar el formulario, recuerda que los datos digitados no se almacenaran, solo es una alerta de que le has dado al boton enviar. 😄");
+                    break;  
+                case 1:
+                    alert("Te falta 1 campo por llenar");
+                    break;
+                case 2:
+                    alert("Te faltaron 2 campos por llenar");
+                    break;
+                case 3:
+                    alert("Te faltaron 3 campos por llenar");
+                    break;    
+            }
+            form.reset();
+            this.submit();
+        }
+    </script>
+    <div class="text-final">
+        <p>
+            Si deseas, tambien puedes <b>visitarnos</b>, estamos ubicados<br>en el norte de
+            la ciudad por cada una de tus <b>compras</b>, recibe un cupon de descuento redimible <br>en 
+            nuestros productos, además ten en cuenta que por <b>6</b> compras <br>obten un obsequio para ti
+            y tu mascota. 
+        </p>
+    </div>    
+    <div class="mapa">
+        <div class="ubi">
+            <div class="m1">
+                <img src="./img/perro.jpeg">
+            </div>
+            <div class="m2">
+                <h2>Nuestra tienda</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50074.70433505214!2d-101.67906738401076!3d21.119555230079204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbf44693576a3%3A0x9dc386050db9e753!2sNube%20373-303%2C%20Jardines%20del%20Moral%2C%2037160%20Le%C3%B3n%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1660703314744!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="contacto" id="contacto">
+            <div class="box">
+                <h2>Redes</h2>
+                <a target="_blank">
+                    <a class="fa-brands fa-instagram " href="https://www.instagram.com/infinit.pets/"></a>
+                </a>
+                <a target="_blank">
+                    <a class="fa-brands fa-facebook" href="https://www.facebook.com/infinitpets" ></a>
+                </a>
+            </div>
+            <div class="box">
+                <h2>Contacto</h2>
+                <a> 
+                    <i class="fa-solid fa-phone"></i>
+                    +52 477 399 4789
+                </a>
+                <a> 
+                    <i class="fa-regular fa-envelope"></i>
+                    infinitpets@gmail.com
+                </a>
+            </div>
+            <div class="box">
+                <h2>Locación</h2>
+                <a> 
+                    <i class="fa-solid fa-location-dot"></i>
+                    León Guanajuato
+                </a>
+                <a> 
+                    <i class="fa-solid fa-earth-africa"></i>
+                    Mexíco
+                </a>
+            </div>              
+        </div>
+    </footer>
+</body>
+</html>
